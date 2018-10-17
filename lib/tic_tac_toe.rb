@@ -71,7 +71,7 @@ class TicTacToe
   end
 
   def winner
-    won? ? @board[combo[0]] : nil 
+    won? ? @board[combo[0]] : nil
   end
 
   def display_board
