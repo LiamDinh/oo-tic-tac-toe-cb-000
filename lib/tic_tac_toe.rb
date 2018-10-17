@@ -1,8 +1,11 @@
 class TicTacToe
 
-  def initialize(board = nil)
-    @board = board || Array.new(9, " ")
-  end
+#  def initialize (board = nil)
+#    @board = board || Array.new(9, " ")
+#  end
+  def initialize
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+end
 
   WIN_COMBINATIONS = [
   [0, 1, 2],
@@ -50,6 +53,36 @@ class TicTacToe
     @board.count{|token| token == "X" || token == "O"}
   end
 
+
+  def won?
+    WIN_COMBINATIONS.any? do |combo|
+      if position_taken?(combo[0]) && @board[combo[0]] == @board[combo[1]] && @board[combo[1]] == @board[combo[2]]
+        return combo
+      end
+    end
+  end
+
+  def full?
+    !@board.any? {|element| element == " " || element ==""}
+  end
+
+  def draw?
+    !won? && full?
+  end
+
+  def over?
+    won? || draw? || full?
+  end
+
+  def winner
+    won? ? @board[won?[0]] : nil
+  end
+
+  def play
+    turn until over?
+    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+  end
+
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
@@ -57,4 +90,5 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+
 end
