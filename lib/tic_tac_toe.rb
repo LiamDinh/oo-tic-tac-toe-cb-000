@@ -56,6 +56,7 @@ class TicTacToe
         return combo
       end
     end
+    puts "just checking"
     return false
   end
 
