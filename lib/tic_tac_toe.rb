@@ -74,6 +74,11 @@ class TicTacToe
     won? ? @board[won?[0]] : won?
   end
 
+  def play
+    turn until over?
+    puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+  end
+
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
