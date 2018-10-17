@@ -56,7 +56,6 @@ class TicTacToe
         return combo
       end
     end
-    puts "just checking"
     return false
   end
 
@@ -75,7 +74,7 @@ class TicTacToe
   def winner
     winning_side = won?
     puts won?
-    if winning_side == false
+    if won? == false
       nil
     else
       return @board[won?[0]]
