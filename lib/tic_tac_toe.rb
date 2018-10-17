@@ -73,8 +73,9 @@ class TicTacToe
 
   def winner
     winning_side = won?
-    puts won?
+  #  puts won?
     if won? == false
+      puts won?
       nil
     else
       return @board[won?[0]]
