@@ -1,6 +1,6 @@
 class TicTacToe
 
-  def initialize(board = nil)
+  def initialize
     @board = board || Array.new(9, " ")
   end
 
@@ -87,4 +87,5 @@ class TicTacToe
     puts "-----------"
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
+
 end
