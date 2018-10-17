@@ -71,7 +71,7 @@ class TicTacToe
   end
 
   def winner
-    won? ? @board[won?[0]] : NIL
+    won? ? @board[won?[0]] : won?
   end
 
   def display_board
