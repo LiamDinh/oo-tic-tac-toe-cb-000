@@ -71,6 +71,14 @@ class TicTacToe
     won? || draw? || full?
   end
 
+  def winner
+    if won? == false
+      return nil
+    else
+      return @board[won?[0]]
+    end
+  end
+
   def display_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
